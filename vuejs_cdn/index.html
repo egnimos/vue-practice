@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Vue Test</title>
+</head>
+<body>
+    <div id="app">
+        <h1 class="h1ClickMe"></h1>
+        <h1>{{message}}</h1>
+        <button @click="clickMe">Click MMMMEEEEEE!!</button>
+    </div>
+    
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    message: "Hello world!"
+                }
+            },
+            /**
+             * 
+             */
+            methods: {
+                clickMe() {
+                    console.log("You have clicked me");
+                    const h1ClickMe = document.getElementsByClassName("h1ClickMe");
+                    h1ClickMe[0].textContent = "You Have Clicked Me";
+                }
+            }
+        })
+        app.mount("#app")
+    </script>
+</body>
+</html>
